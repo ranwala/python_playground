@@ -1,0 +1,46 @@
+[
+    {
+        "n_id": "notif-001",
+        "title": "test1",
+        "msg": "testing",
+        "type": 2,
+        "time": "10:40",
+        "interval_minutes": null,
+        "status": "Active",
+        "created_at": "2026-10-03 10:49:12",
+        "template_name": "Daily Status"
+    },
+    {
+        "n_id": "notif-001",
+        "title": "title ",
+        "msg": "testing",
+        "type": 2,
+        "time": "11:00",
+        "interval_minutes": null,
+        "status": "Active",
+        "created_at": "2026-10-03 11:09:26",
+        "template_name": "Weekly Meeting"
+    },
+    {
+        "n_id": "notif-001",
+        "title": "test",
+        "msg": "testing",
+        "type": 3,
+        "time": null,
+        "interval_minutes": 1,
+        "status": "Active",
+        "created_at": "2026-10-03 11:23:30",
+        "template_name": null
+    },
+    {
+        "n_id": "notif-001",
+        "title": "Recurring Notification",
+        "msg": "This is a recurring notification for 3 sessions",
+        "type": 4,
+        "time": null,
+        "interval_minutes": 1,
+        "status": "Active",
+        "created_at": "2026-10-03 11:26:32",
+        "template_name": null
+    }
+]

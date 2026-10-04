@@ -122,11 +122,22 @@ def main():
         for template in templates:
             match template.type:
                 case NotificationTypes.Schedule.label:
-                    schedule_at(template.time, template.title, template.message)
+                    notification_service.send_notification(NotificationTypes.Schedule.label,
+                        template
+                    )
+                    #schedule_at(template.time, template.title, template.message)
                 case NotificationTypes.Recurring.label:
-                    recurring_reminder(template.interval_minutes, template.use_count, template.title, template.message)
+                    notification_service.send_notification(
+                        NotificationTypes.Recurring.label,
+                        template
+                    )
+                    #recurring_reminder(template.interval_minutes, template.use_count, template.title, template.message)
                 case NotificationTypes.CountdownTimer.label:
-                    countdown_timer(template.interval_minutes, template.title, template.message)
+                    notification_service.send_notification(
+                        NotificationTypes.CountdownTimer.label,
+                        template
+                    )
+                    #countdown_timer(template.interval_minutes, template.title, template.message)
 
     elif option == 3:
         print("--- All Notifications ---")

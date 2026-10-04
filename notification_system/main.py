@@ -3,7 +3,7 @@ from scheduler import schedule_at, countdown_timer, recurring_reminder
 from notification_model import NotificationModel
 from datetime import datetime
 from utils import generate_notification_id
-from notification_enum import NotificationTypes, NotificationStatus
+from notification_enum import NotificationTypes
 from notification_service import NotificationService
 from notification_printer import print_notification
 from notification_enum import JsonModel
@@ -98,6 +98,8 @@ def main():
         elif notification_option == 4:
             minutes = int(input("Enter minutes: "))
             sessions = int(input("Enter sessions: "))
+            title = input("Enter title: ")
+            message = input("Enter message: ")
 
             notifications.append(NotificationModel(
                 generate_notification_id(len(notifications)),
@@ -113,7 +115,7 @@ def main():
 
             notification_service.save_notifications(notifications)
 
-            recurring_reminder(minutes, sessions)
+            recurring_reminder(minutes, sessions, title, message)
 
     elif option == 2:
         templates = notification_service.load_notifications(JsonModel.TemplateModel.name)
@@ -125,19 +127,16 @@ def main():
                     notification_service.send_notification(NotificationTypes.Schedule.label,
                         template
                     )
-                    #schedule_at(template.time, template.title, template.message)
                 case NotificationTypes.Recurring.label:
                     notification_service.send_notification(
                         NotificationTypes.Recurring.label,
                         template
                     )
-                    #recurring_reminder(template.interval_minutes, template.use_count, template.title, template.message)
                 case NotificationTypes.CountdownTimer.label:
                     notification_service.send_notification(
                         NotificationTypes.CountdownTimer.label,
                         template
                     )
-                    #countdown_timer(template.interval_minutes, template.title, template.message)
 
     elif option == 3:
         print("--- All Notifications ---")
@@ -146,6 +145,9 @@ def main():
     elif option == 4:
         print("--- Active Notifications ---")
         print_notification(notifications)
+
+    elif option == 5:
+        notification_service.cancel_notifications(notifications)
 
     else:
         exit()

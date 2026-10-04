@@ -21,6 +21,14 @@ class NotificationService:
         print("Notifications saved successfully.")
 
 
+    def cancel_notifications(self, notifications):
+        for notification in notifications:
+            notification.status = 'Cancelled'
+
+        print("Notifications canceled successfully.")
+        self.save_notifications(notifications)
+
+
     def send_notification(self, notification_type, template):
 
         handlers = {

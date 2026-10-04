@@ -6,7 +6,7 @@
         "notification_type": "Schedule",
         "time": "12:22",
         "interval_minutes": null,
-        "status": "Active",
+        "status": "Cancelled",
         "created_at": "2026-10-03 12:20:43",
         "template_name": "Weekly Meeting"
     }

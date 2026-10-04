@@ -39,11 +39,11 @@ def countdown_timer(count_down_time_in_minutes: int, title: str, message: str):
     print("The notification will be sent in: ", count_down_time_in_minutes, "minutes")
 
 
-def recurring_reminder(minutes: int, sessions: int):
+def recurring_reminder(minutes: int, sessions: int, title:str, message:str):
     while sessions > 0:
         print("Timer starts now, will notify you in ", minutes, "minutes")
         time.sleep(minutes * 60)
-        notify("Drink a water", "Time to take a break!")
+        notify(title, message)
         sessions -= 1
 
 

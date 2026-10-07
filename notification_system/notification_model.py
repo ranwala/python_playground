@@ -1,5 +1,5 @@
 class NotificationModel:
-    def __init__(self, n_id, title, msg, notification_type, time, interval_minutes, status, created_at, template_name):
+    def __init__(self, n_id, title, msg, notification_type, status, created_at, template_name, time, interval_minutes,):
         self.n_id = n_id
         self.title = title
         self.msg = msg

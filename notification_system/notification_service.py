@@ -23,13 +23,15 @@ class NotificationService:
 
     def cancel_notifications(self, notifications):
         for notification in notifications:
-            notification.status = 'Cancelled'
+            if notification.status != 'Cancelled':
+                notification.status = 'Cancelled'
 
+        print(notifications)
         print("Notifications canceled successfully.")
         self.save_notifications(notifications)
 
 
-    def send_notification(self, notification_type, template):
+    def send_notification(self, template):
 
         handlers = {
             NotificationTypes.Schedule.label: (schedule_at, lambda n: (n.time, n.title, n.message)),
@@ -39,7 +41,7 @@ class NotificationService:
             (n.interval_minutes, n.title, n.message))
         }
 
-        func, get_args = handlers[notification_type]
+        func, get_args = handlers[template.type]
 
         thread = threading.Thread(target=func, args=get_args(template))
         thread.start()

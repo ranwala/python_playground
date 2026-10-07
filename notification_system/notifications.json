@@ -1,13 +1,24 @@
 [
     {
         "n_id": "notif-1",
-        "title": "Test1",
-        "msg": "testing",
+        "title": "Meeting with the Lead",
+        "msg": "Please prepare to answer to the all questions",
         "notification_type": "Schedule",
-        "time": "12:22",
+        "time": "16:34",
         "interval_minutes": null,
         "status": "Cancelled",
-        "created_at": "2026-10-03 12:20:43",
-        "template_name": "Weekly Meeting"
+        "created_at": "2026-10-07 16:32:31",
+        "template_name": "One time Meeting"
+    },
+    {
+        "n_id": "notif-2",
+        "title": "Daily Stand Up",
+        "msg": "Regular meeting",
+        "notification_type": "Schedule",
+        "time": "19:45",
+        "interval_minutes": null,
+        "status": "Cancelled",
+        "created_at": "2026-10-07 19:42:55",
+        "template_name": "Daily Meeting"
     }
 ]
